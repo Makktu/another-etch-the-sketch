@@ -5,7 +5,29 @@
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Etch-Sketch</title>
+        <title>Etch-o-Sketch</title>
     </head>
-    <body></body>
+    <body>
+        <div class="main-container">
+            <div class="info-panel">
+                <h1>Etch-o-Sketch</h1>
+                <p>
+                    Click inside the canvas to activate the brush.
+                    <br />
+                    Hover over the cells to paint.
+                </p>
+                <div class="btn-size small">SMALL 16x16</div>
+                <div class="btn-size medium">MEDIUM 32x32</div>
+                <div class="btn-size large">LARGE 64x64</div>
+                <div class="btn-size x-large">X-LARGE 128x128</div>
+            </div>
+            <div class="canvas-container">
+                <div class="canvas"></div>
+                <span class="messages"></span>
+            </div>
+        </div>
+        <footer>Info</footer>
+
+        <script src="script.js"></script>
+    </body>
 </html>
