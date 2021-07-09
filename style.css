@@ -20,6 +20,7 @@ body {
     width: 30vw;
     height: 90vh;
     border: 1px red solid;
+    position: relative;
 }
 
 .canvas-container {
@@ -36,6 +37,12 @@ body {
     margin-top: 1.5rem;
 }
 
+.all-btn {
+    position: absolute;
+    bottom: 0;
+    text-align: center;
+}
+
 .btn-size {
     height: 50px;
     width: 160px;
@@ -44,8 +51,8 @@ body {
     line-height: 50px;
     text-align: center;
     font-size: 1.05rem;
-    margin: 0 auto;
-    margin-bottom: 10px;
+
+    margin-top: 10px;
 }
 
 .small {
@@ -55,7 +62,7 @@ body {
     background-color: rgb(0, 255, 179);
 }
 .large {
-    background-color: rgb(0, 4, 255);
+    background-color: rgb(108, 163, 19);
 }
 .x-large {
     background-color: rgb(247, 0, 255);
