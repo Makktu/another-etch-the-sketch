@@ -32,27 +32,31 @@ body {
 .canvas {
     height: 820px;
     width: 820px;
-    background-color: darkcyan;
+    background-color: rgb(0, 139, 69);
     margin: 0 auto;
     margin-top: 1.5rem;
 }
 
 .all-btn {
+    display: flex;
+    flex-direction: column;
     position: absolute;
     bottom: 0;
     text-align: center;
+    justify-content: center;
+    margin-left: 27%;
 }
 
 .btn-size {
     height: 50px;
     width: 160px;
-    border-radius: 5px;
-    box-sizing: border-box;
+    /* if width is changed, change line-height below to match */
     line-height: 50px;
-    text-align: center;
+    box-sizing: border-box;
     font-size: 1.05rem;
-
+    border-radius: 5px;
     margin-top: 10px;
+    cursor: pointer;
 }
 
 .small {
@@ -83,4 +87,9 @@ footer {
     width: 100vw;
     height: 6vh;
     border: 1px yellow solid;
+    color: white;
+    text-align: center;
+    font-size: 0.8rem;
+    position: absolute;
+    bottom: 0;
 }
