@@ -7,6 +7,7 @@ body {
         rgba(0, 212, 255, 1) 100%
     );
     overflow: hidden;
+    box-sizing: border-box;
 }
 
 .main-container {
@@ -32,9 +33,13 @@ body {
 .canvas {
     height: 820px;
     width: 820px;
-    background-color: rgb(0, 139, 69);
+    background-color: white;
     margin: 0 auto;
     margin-top: 1.5rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    box-sizing: content;
 }
 
 .all-btn {
@@ -63,13 +68,20 @@ body {
     background-color: chartreuse;
 }
 .medium {
-    background-color: rgb(0, 255, 179);
+    background-color: rgb(208, 255, 0);
 }
 .large {
-    background-color: rgb(108, 163, 19);
+    background-color: rgb(206, 135, 138);
 }
 .x-large {
     background-color: rgb(247, 0, 255);
+}
+
+.small:hover,
+.medium:hover,
+.large:hover,
+.x-large:hover {
+    background-color: white;
 }
 
 h1 {
@@ -92,4 +104,53 @@ footer {
     font-size: 0.8rem;
     position: absolute;
     bottom: 0;
+}
+
+.grid-square-16 {
+    height: 51.25px;
+    width: 51.25px;
+    box-sizing: border-box;
+}
+.grid-square-32 {
+    height: 25.625px;
+    width: 25.625px;
+    box-sizing: border-box;
+}
+.grid-square-64 {
+    height: 12.8125px;
+    width: 12.8125px;
+    box-sizing: border-box;
+}
+.grid-square-128 {
+    /* border: 1px solid rgba(0, 0, 0, 0.1); */
+    height: 6.40625px;
+    width: 6.40625px;
+    box-sizing: border-box;
+}
+
+.grid-lines {
+    border: 1px dotted black;
+}
+
+.grid-on {
+    background-color: green;
+}
+
+.messages {
+    text-align: center;
+    margin-bottom: 50px;
+    color: yellowgreen;
+    font-size: 1.5rem;
+    width: ;
+}
+
+.brush-colors {
+    color: white;
+    margin-bottom: 50px;
+    font-size: 1.4rem;
+    text-align: left;
+}
+
+.grid-off {
+    border: 1px dotted white;
 }
