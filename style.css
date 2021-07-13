@@ -1,3 +1,10 @@
+html {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
 body {
     background: rgb(2, 0, 36);
     background: linear-gradient(
@@ -8,6 +15,14 @@ body {
     );
     overflow: hidden;
     box-sizing: border-box;
+    /* -moz-box-sizing: border-box; */
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
 }
 
 .main-container {
@@ -15,19 +30,22 @@ body {
     flex-direction: row;
     width: 70vw;
     margin: 0 auto;
+    -moz-box-sizing: border-box;
 }
 
 .info-panel {
     width: 30vw;
     height: 90vh;
-    border: 1px red solid;
+    /* border: 1px red solid; */
     position: relative;
 }
 
 .canvas-container {
     width: 85vw;
     height: 90vh;
-    border: 1px white solid;
+    -moz-box-sizing: border-box;
+
+    /* border: 1px white solid; */
 }
 
 .canvas {
@@ -39,7 +57,8 @@ body {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    box-sizing: content;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 .all-btn {
@@ -98,7 +117,7 @@ p {
 footer {
     width: 100vw;
     height: 6vh;
-    border: 1px yellow solid;
+    /* border: 1px yellow solid; */
     color: white;
     text-align: center;
     font-size: 0.8rem;
@@ -147,7 +166,7 @@ footer {
 .brush-colors {
     color: white;
     margin-bottom: 50px;
-    font-size: 1.4rem;
+    font-size: 1.75rem;
     text-align: left;
 }
 

@@ -1,22 +1,33 @@
 "use strict";
 
-function whiteGrid() {
-    for (let k = 0; k < gridSize; k++) {
-        for (let j = 0; j < gridSize; j++) {
-            const div = document.createElement("div");
-            div.classList.add(`grid-off`);
-            addRemoveLines(div);
+// function whiteGrid() {
+//     for (let k = 0; k < gridSize; k++) {
+//         for (let j = 0; j < gridSize; j++) {
+//             const div = document.createElement("div");
+//             div.classList.add(`grid-off`);
+//             addRemoveLines(div);
 
-            canvas.replaceChild(div, div);
-        }
-    }
+//             canvas.replaceChild(div, div);
+//         }
+//     }
+// }
+
+function underlineActiveColor(underlineThis) {
+    // first, clear all of any underline
+    blackBrush.style.cssText = "";
+    redBrush.style.cssText = "";
+    yellowBrush.style.cssText = "";
+    greenBrush.style.cssText = "";
+    blueBrush.style.cssText = "";
+    eraserBrush.style.cssText = "";
+    // last, underline the active one that called the function
+    underlineThis.style.cssText =
+        "text-decoration: underline; margin-left: 80%; font-size: 110%; transition: margin-left 0.5s;";
 }
 
 function showMessages() {
     brushToggle === 1 ? (togStatus = "ON") : (togStatus = "OFF");
-    brushColor !== "white"
-        ? (messageSpace.innerText = `Brush: ${togStatus} / ${brushColor}`)
-        : (messageSpace.innerText = `Brush: ${togStatus} / ERASER`);
+    messageSpace.innerText = `Brush: ${togStatus}`;
 }
 
 const addRemoveLines = (div) => {
@@ -96,7 +107,7 @@ gridOff.addEventListener("click", function (e) {
     e.target.style.backgroundColor = "green";
     gridOn.style.backgroundColor = "black";
     gridLinesToggle = 0;
-    whiteGrid();
+    makeGrid();
 });
 
 const gridOn = document.querySelector(".grid-on");
@@ -110,35 +121,47 @@ gridOn.addEventListener("click", function (e) {
 const blackBrush = document.querySelector(".black");
 blackBrush.addEventListener("click", function () {
     brushColor = "black";
+    underlineActiveColor(blackBrush);
+
     showMessages();
 });
 const redBrush = document.querySelector(".red");
 redBrush.addEventListener("click", function () {
     brushColor = "red";
+    underlineActiveColor(redBrush);
+
     showMessages();
 });
 const yellowBrush = document.querySelector(".yellow");
 yellowBrush.addEventListener("click", function () {
     brushColor = "yellow";
+    underlineActiveColor(yellowBrush);
+
     showMessages();
 });
 const greenBrush = document.querySelector(".green");
 greenBrush.addEventListener("click", function () {
     brushColor = "green";
+    underlineActiveColor(greenBrush);
+
     showMessages();
 });
 const blueBrush = document.querySelector(".blue");
 blueBrush.addEventListener("click", function () {
     brushColor = "blue";
+    underlineActiveColor(blueBrush);
+
     showMessages();
 });
 const eraserBrush = document.querySelector(".eraser");
-eraserBrush.addEventListener("click", function () {
+eraserBrush.addEventListener("click", function (e) {
     brushColor = "white";
+    underlineActiveColor(eraserBrush);
     showMessages();
 });
 
 // * MAKE THE GRID
 
+underlineActiveColor(blackBrush);
 showMessages();
 makeGrid();
