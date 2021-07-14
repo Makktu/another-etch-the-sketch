@@ -1,25 +1,15 @@
 "use strict";
 
-// function whiteGrid() {
-//     for (let k = 0; k < gridSize; k++) {
-//         for (let j = 0; j < gridSize; j++) {
-//             const div = document.createElement("div");
-//             div.classList.add(`grid-off`);
-//             addRemoveLines(div);
-
-//             canvas.replaceChild(div, div);
-//         }
-//     }
-// }
-
 function underlineActiveColor(underlineThis) {
     // first, clear all of any underline
-    blackBrush.style.cssText = "";
-    redBrush.style.cssText = "";
-    yellowBrush.style.cssText = "";
-    greenBrush.style.cssText = "";
-    blueBrush.style.cssText = "";
-    eraserBrush.style.cssText = "";
+    blackBrush.style.cssText = "margin-left: 0%; transition: margin-left 0.2s;";
+    redBrush.style.cssText = "margin-left: 0%; transition: margin-left 0.2s;";
+    yellowBrush.style.cssText =
+        "margin-left: 0%; transition: margin-left 0.2s;";
+    greenBrush.style.cssText = "margin-left: 0%;2transition: margin-left 0.2s;";
+    blueBrush.style.cssText = "margin-left: 0%; transition: margin-lef2 0.2s;";
+    eraserBrush.style.cssText =
+        "margin-left: 0%; transition: margin-left 0.2s;";
     // last, underline the active one that called the function
     underlineThis.style.cssText =
         "margin-left: 100%; transition: margin-left 0.5s;";
@@ -27,6 +17,10 @@ function underlineActiveColor(underlineThis) {
 
 function showMessages() {
     brushToggle === 1 ? (togStatus = "ON") : (togStatus = "OFF");
+    brushToggle === 1
+        ? (messageSpace.style.cssText =
+              "margin-left: 80%; color: white; transition: all .5s ease-out;")
+        : (messageSpace.style.cssText = "margin-left: 20%; transition: .25s;");
     messageSpace.innerText = `Brush: ${togStatus}`;
 }
 
@@ -66,11 +60,15 @@ let brushToggle = 0; // ? start with brush OFF
 
 let brushColor = "black";
 
-let gridLinesToggle = 1;
+let gridLinesToggle = 1; // ? grid is ON
 
-let togStatus = "ON";
+let togStatus = "ON"; // ? variable to handle status of grid
 
 const messageSpace = document.querySelector(".messages");
+messageSpace.addEventListener("click", () => {
+    brushToggle === 0 ? (brushToggle = 1) : (brushToggle = 0);
+    showMessages();
+});
 
 const canvas = document.querySelector(".canvas");
 canvas.addEventListener("click", () => {
@@ -99,29 +97,27 @@ largeBtn.addEventListener("click", () => {
 const xlargeBtn = document.querySelector(".x-large");
 xlargeBtn.addEventListener("click", () => {
     gridSize = 128;
-    gridOff.style.backgroundColor = "green";
-    gridOn.style.backgroundColor = "black";
     gridLinesToggle = 0;
+    gridOn.style.cssText = "opacity: 0.5; text-decoration: none;";
+    gridOff.style.cssText = "opacity: 1; text-decoration: underline";
     makeGrid();
 });
 
 const gridOff = document.querySelector(".grid-off");
-gridOff.addEventListener("click", function (e) {
-    e.target.style.backgroundColor = "green";
-    e.target.style.opacity = 1;
-    gridOn.style.backgroundColor = "";
-    gridOn.style.opacity = 0.5;
+gridOff.style.opacity = 0.4;
+gridOff.addEventListener("click", function () {
+    gridOn.style.cssText = "opacity: 0.5; text-decoration: none;";
+    gridOff.style.cssText = "opacity: 1; text-decoration: underline";
 
     gridLinesToggle = 0;
     makeGrid();
 });
 
 const gridOn = document.querySelector(".grid-on");
-gridOn.addEventListener("click", function (e) {
+gridOn.addEventListener("click", function () {
     if (gridSize !== 128) {
-        e.target.style.backgroundColor = "green";
-        gridOff.style.backgroundColor = "";
-        gridOff.style.opacity = 0.5;
+        gridOff.style.cssText = "opacity: 0.5; text-decoration: none";
+        gridOn.style.cssText = "opacity: 1; text-decoration: underline";
         gridLinesToggle = 1;
         makeGrid();
     } else {

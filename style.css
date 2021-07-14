@@ -79,7 +79,7 @@ body {
     box-sizing: border-box;
     font-size: 1.05rem;
     border-radius: 5px;
-    margin-top: 10px;
+    margin-top: 5px;
     cursor: pointer;
 }
 
@@ -101,6 +101,7 @@ body {
 .large:hover,
 .x-large:hover {
     background-color: white;
+    transition: 0.5s;
 }
 
 h1 {
@@ -155,7 +156,7 @@ footer {
 }
 
 .grid-on {
-    background-color: green;
+    /* background-color: green; */
 }
 
 .grid-off {
@@ -165,9 +166,11 @@ footer {
 .messages {
     text-align: center;
     margin-bottom: 50px;
+    /* margin-left: 20%; */
     color: yellowgreen;
     font-size: 1.5rem;
-    width: ;
+    width: 200px;
+    cursor: pointer;
 }
 
 .brush-colors {
@@ -185,7 +188,7 @@ footer {
 
 #eraser-img {
     height: 60px;
-    width: 60px;
+    width: 100px;
 }
 
 .black {
@@ -195,11 +198,11 @@ footer {
     border-radius: 25px;
     margin-bottom: 5px;
 }
-.red {
-    width: 100px;
-    height: 30px;
-    background-color: red;
-    border-radius: 25px;
+.red img {
+    width: 60px;
+    height: 40px;
+    /* background-color: red;
+    border-radius: 25px; */
     margin-bottom: 5px;
 }
 .yellow {
