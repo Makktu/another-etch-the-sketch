@@ -22,7 +22,7 @@ function underlineActiveColor(underlineThis) {
     eraserBrush.style.cssText = "";
     // last, underline the active one that called the function
     underlineThis.style.cssText =
-        "text-decoration: underline; margin-left: 80%; font-size: 110%; transition: margin-left 0.5s;";
+        "text-decoration: underline; margin-left: 80%; transition: margin-left 0.5s;";
 }
 
 function showMessages() {
@@ -99,6 +99,9 @@ largeBtn.addEventListener("click", () => {
 const xlargeBtn = document.querySelector(".x-large");
 xlargeBtn.addEventListener("click", () => {
     gridSize = 128;
+    gridOff.style.backgroundColor = "green";
+    gridOn.style.backgroundColor = "black";
+    gridLinesToggle = 0;
     makeGrid();
 });
 
@@ -112,10 +115,12 @@ gridOff.addEventListener("click", function (e) {
 
 const gridOn = document.querySelector(".grid-on");
 gridOn.addEventListener("click", function (e) {
-    e.target.style.backgroundColor = "green";
-    gridOff.style.backgroundColor = "black";
-    gridLinesToggle = 1;
-    makeGrid();
+    if (gridSize !== 128) {
+        e.target.style.backgroundColor = "green";
+        gridOff.style.backgroundColor = "black";
+        gridLinesToggle = 1;
+        makeGrid();
+    }
 });
 
 const blackBrush = document.querySelector(".black");

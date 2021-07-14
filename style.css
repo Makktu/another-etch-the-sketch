@@ -49,8 +49,8 @@ body {
 }
 
 .canvas {
-    height: 820px;
-    width: 820px;
+    height: 48rem;
+    width: 48rem;
     background-color: white;
     margin: 0 auto;
     margin-top: 1.5rem;
@@ -126,24 +126,27 @@ footer {
 }
 
 .grid-square-16 {
-    height: 51.25px;
-    width: 51.25px;
+    height: 3rem;
+    width: 3rem;
     box-sizing: border-box;
 }
+
 .grid-square-32 {
-    height: 25.625px;
-    width: 25.625px;
+    height: 1.5rem;
+    width: 1.5rem;
     box-sizing: border-box;
 }
+
 .grid-square-64 {
-    height: 12.8125px;
-    width: 12.8125px;
+    height: 0.75rem;
+    width: 0.75rem;
     box-sizing: border-box;
 }
+
 .grid-square-128 {
     /* border: 1px solid rgba(0, 0, 0, 0.1); */
-    height: 6.40625px;
-    width: 6.40625px;
+    height: 0.375rem;
+    width: 0.375rem;
     box-sizing: border-box;
 }
 
@@ -166,10 +169,12 @@ footer {
 .brush-colors {
     color: white;
     margin-bottom: 50px;
-    font-size: 1.75rem;
+    font-size: 1.5rem;
     text-align: left;
+    cursor: pointer;
 }
 
-.grid-off {
-    border: 1px dotted white;
+.grid-off,
+.grid-on {
+    cursor: pointer;
 }
