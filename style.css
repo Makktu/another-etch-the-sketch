@@ -158,6 +158,10 @@ footer {
     background-color: green;
 }
 
+.grid-off {
+    opacity: 0.5;
+}
+
 .messages {
     text-align: center;
     margin-bottom: 50px;
@@ -169,7 +173,7 @@ footer {
 .brush-colors {
     color: white;
     margin-bottom: 50px;
-    font-size: 1.5rem;
+    /* font-size: 1.5rem; */
     text-align: left;
     cursor: pointer;
 }
@@ -177,4 +181,45 @@ footer {
 .grid-off,
 .grid-on {
     cursor: pointer;
+}
+
+#eraser-img {
+    height: 60px;
+    width: 60px;
+}
+
+.black {
+    width: 100px;
+    height: 30px;
+    background-color: black;
+    border-radius: 25px;
+    margin-bottom: 5px;
+}
+.red {
+    width: 100px;
+    height: 30px;
+    background-color: red;
+    border-radius: 25px;
+    margin-bottom: 5px;
+}
+.yellow {
+    width: 100px;
+    height: 30px;
+    background-color: yellow;
+    border-radius: 25px;
+    margin-bottom: 5px;
+}
+.green {
+    width: 100px;
+    height: 30px;
+    background-color: green;
+    border-radius: 25px;
+    margin-bottom: 5px;
+}
+.blue {
+    width: 100px;
+    height: 30px;
+    background-color: blue;
+    border-radius: 25px;
+    margin-bottom: 5px;
 }
