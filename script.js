@@ -6,7 +6,7 @@ function underlineActiveColor(underlineThis) {
     redBrush.style.cssText = "margin-left: 0%; transition: margin-left 0.2s;";
     yellowBrush.style.cssText =
         "margin-left: 0%; transition: margin-left 0.2s;";
-    greenBrush.style.cssText = "margin-left: 0%;2transition: margin-left 0.2s;";
+    greenBrush.style.cssText = "margin-left: 0%; transition: margin-left 0.2s;";
     blueBrush.style.cssText = "margin-left: 0%; transition: margin-lef2 0.2s;";
     eraserBrush.style.cssText =
         "margin-left: 0%; transition: margin-left 0.2s;";
